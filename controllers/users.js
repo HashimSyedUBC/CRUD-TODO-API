@@ -99,7 +99,7 @@ function filterUsersAndTodos(foundUser, id) {
 //EFFECTS: Finds the todo with the given id and modifies as required if the user owns the todo, otherwise outputs respective error messages
 export const updateTodo = (req,res) => {
     const {id} = req.params;
-    const todo = todo.find((todo) => todo.id == id);
+    const todo = todos.find((todo) => todo.id == id);
     const {todoName, status, category, password, username} = req.body;
     const foundUser = users.find((user) => user.username == username);
     if (foundUser && foundUser.ids.includes(id)) {
